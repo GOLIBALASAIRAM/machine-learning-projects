@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
 
 df = pd.read_csv('height-weight.csv')
 X = df[['Weight']]
@@ -25,3 +26,6 @@ new_data = pd.DataFrame(scaler.transform([[72]]), columns=X_train.columns)
 predicted_height = regression.predict(new_data)
 
 print(f"Predicted height for weight 72: {predicted_height[0]}")
+print(f"tested values are:{y_pred}")
+mse=mean_squared_error(Y_test,y_pred)
+print(mse)
