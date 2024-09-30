@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Prediction</title>
+    <style>
+        body {
+            background: url(https://c1.wallpaperflare.com/preview/969/336/23/money-finance-business-financial.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        *{
+            padding: 0%;
+        }
+
+        h1 {
+            width: 300px;
+            margin: 10px auto;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            color: rgb(0, 0, 8);
+            /* background-color: rgb(209, 239, 236); */
+        }
+
+        .container {
+            display: flex;
+            justify-content:center;
+            /* margin-left: 40%;
+            margin-top: 20px; */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px 20px;
+            margin: 10px 30px;
+            background-color: rgb(209, 239, 236);
+        }
+
+        input[type="submit"], button[type="submit"] {
+            color: rgb(251, 253, 251);
+            background-color: rgb(53, 167, 220);
+            padding: 10px;
+        }
+        h2 {
+            color: rgb(0, 3, 8);
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px 20px;
+            /* margin: 10px 30px; */
+            background-color: rgb(209, 239, 236);
+            /* word-wrap: break-word;
+             */
+             margin-left: 25%;
+             margin-right: 25%;
+        }
+
+        label {
+            color: rgb(9, 0, 0);
+    
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="heading">Salary Prediction</h1>
+    <center>
+        <div class="container"  >
+            <form action="/predict" method="POST">
+                <label for="age"><b>Enter Age:</b></label>
+                <input type="text" id="age" name="age" required>
+                <label for="experience"><b>Enter Experience:</b></label>
+                <input type="text" id="experience" name="experience" required>
+                <button type="submit"><b>Predict</b></button>
+            </form>
+    
+            
+        </div>
+    </center>
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+        {% endif %}
+</body>
+</html>
